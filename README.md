@@ -15,7 +15,9 @@ Once signed in the user will be greeted with the Homepage, this is where they wi
 Feel free to download this app and run it on your own devices!
 
 Sign in page:
-   - ![alt text](https://github.com/jasonc2901/eBayDealsMobileApp/blob/master/screenshots/signin.png?raw=true)
+   - <img src="https://github.com/jasonc2901/eBayDealsMobileApp/blob/master/screenshots/signin.png?raw=true" width="300" height="450">
 
 Homepage:
-   - ![alt text](https://github.com/jasonc2901/eBayDealsMobileApp/blob/master/screenshots/signin.png?raw=true)
+   - <img src="https://github.com/jasonc2901/eBayDealsMobileApp/blob/master/screenshots/homepage.png?raw=true" width="300" height="450">
+
+   
