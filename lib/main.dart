@@ -1,4 +1,3 @@
-import 'package:ebay_deals_app/view/HomePage.dart';
 import 'package:ebay_deals_app/view/WelcomePage.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'dart:ui';
+import 'package:ebay_deals_app/view/WelcomePage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class UserProfileBanner extends StatelessWidget {
@@ -53,14 +55,36 @@ class UserProfileBanner extends StatelessWidget {
                         fontSize: 20.0,
                         fontWeight: FontWeight.w300,
                         color: Colors.white),
-                        textAlign: TextAlign.center,
+                    textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 10.0),
                   Text(
                     "Email: $email",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.w300),
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300),
                   ),
+                  SizedBox(height: 13.0),
+                  FlatButton(
+                      onPressed: () {
+                        FirebaseAuth.instance.signOut();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WelcomePage()));
+                      },
+                      child: Text(
+                        "Logout",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400
+                        ),
+                      ),
+                      color: Colors.grey[400],
+                  )
                 ],
               ),
             ),

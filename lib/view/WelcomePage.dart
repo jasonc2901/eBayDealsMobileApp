@@ -1,6 +1,7 @@
 import 'package:ebay_deals_app/CustomAlert/AccountCreatedDialog.dart';
 import 'package:ebay_deals_app/CustomAlert/InvalidLoginAlert.dart';
 import 'package:ebay_deals_app/view/SignUpPage.dart';
+import 'package:ebay_deals_app/view/WelcomeBack.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -20,9 +21,25 @@ class _WelcomePageState extends State<WelcomePage> {
   bool _success;
   String _userEmail;
 
-  resetPageFunction(){
+  resetPageFunction() {
     _emailController.text = "";
     _passwordController.text = "";
+  }
+
+  //this method will check if there is a user logged in currently
+  //if there is you will be automatically logged in
+  //if not you will be brought to the login screen
+  @override
+  void initState() {
+    FirebaseAuth.instance.currentUser().then((user) {
+      if (user != null) {
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => WelcomeBack(user)),
+            (Route<dynamic> route) => false);
+      }
+    });
+    super.initState();
   }
 
   @override

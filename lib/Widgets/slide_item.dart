@@ -31,6 +31,7 @@ class _SlideItemState extends State<SlideItem> {
       child: FlatButton(
         color: Colors.transparent,
         padding: EdgeInsets.all(0),
+        onPressed: () {},
         child: Container(
           height: widget.height != null ? widget.height : MediaQuery.of(context).size.height / 2.9,
           width: MediaQuery.of(context).size.width / 1.6,
@@ -60,7 +61,7 @@ class _SlideItemState extends State<SlideItem> {
                     Container(
                       child: Text(
                         widget.title,
-                        style: TextStyle(color: Colors.white, fontSize: 15.0),
+                        style: TextStyle(color: Colors.white, fontSize: 17.0),
                         textAlign: TextAlign.center,
                       ),
                     ),

@@ -101,7 +101,7 @@ class DealsHomePage extends StatelessWidget {
 
     //lists to store all deals and the best deals
     List<AllDeals> allDeals = dealsData.data.allDeals;
-    List<AllDeals> bestDeals = new List<AllDeals>();
+    List<AllDeals> biggestSavings = new List<AllDeals>();
 
     for(int i = 0; i < dealsData.data.allDeals.length; i++){
       //turns each deal into json object and extracts the original price
@@ -112,7 +112,7 @@ class DealsHomePage extends StatelessWidget {
       if(originalPrice.toString().contains("null")){
         ;
       }else {
-        bestDeals.add(allDeals[i]); 
+        biggestSavings.add(allDeals[i]); 
       }
     }
 
@@ -129,9 +129,9 @@ class DealsHomePage extends StatelessWidget {
                 title: "Top Deals on eBay",
                 info: "Hello $_displayName, Browse the top deals below!",
                 pic: "assets/ebay.png"),
-            if (bestDeals.length >= 0)
+            if (biggestSavings.length >= 0)
               BiggestDealContainer(
-                deals: bestDeals, 
+                deals: biggestSavings, 
                 title: "Biggest Savings"
             ),
             if (dealsData.data.dealsUnder10.length >= 1)
