@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "877834465215",
+    "firebase_url": "https://ebay-deals-app.firebaseio.com",
+    "project_id": "ebay-deals-app",
+    "storage_bucket": "ebay-deals-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877834465215:android:4a7a38e66c9a76d0fc3b0a",
+        "android_client_info": {
+          "package_name": "com.example.ebay_deals_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877834465215-4vcqpv0tv91dnbphorgmhinj5rjs5o3i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ebay_deals_app",
+            "certificate_hash": "25fe95ad8fbfc8a68b48fba09f7a35e709f0ad22"
+          }
+        },
+        {
+          "client_id": "877834465215-9eq4973hjveqm06a8ch2q0lu99497k7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClqgR4gXmqdOmYQ6YKfWpMtLw-nh_PMc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877834465215-9eq4973hjveqm06a8ch2q0lu99497k7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
