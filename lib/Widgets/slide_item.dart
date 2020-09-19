@@ -9,15 +9,15 @@ class SlideItem extends StatefulWidget {
   final String originalPrice;
   final double height;
 
-  SlideItem({
-    Key key,
-    @required this.img,
-    @required this.title,
-    @required this.price,
-    @required this.url,
-    this.originalPrice,
-    this.height
-  }) : super(key: key);
+  SlideItem(
+      {Key key,
+      @required this.img,
+      @required this.title,
+      @required this.price,
+      @required this.url,
+      this.originalPrice,
+      this.height})
+      : super(key: key);
 
   @override
   _SlideItemState createState() => _SlideItemState();
@@ -33,12 +33,15 @@ class _SlideItemState extends State<SlideItem> {
         padding: EdgeInsets.all(0),
         onPressed: () {},
         child: Container(
-          height: widget.height != null ? widget.height : MediaQuery.of(context).size.height / 2.9,
+          height: widget.height != null
+              ? widget.height
+              : MediaQuery.of(context).size.height / 2.9,
           width: MediaQuery.of(context).size.width / 1.6,
           child: Card(
-            color: Colors.grey[700],
+            color: Colors.grey[800],
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
+            shadowColor: Colors.grey[900],
             elevation: 3.0,
             child: Column(
               children: <Widget>[
@@ -84,7 +87,7 @@ class _SlideItemState extends State<SlideItem> {
                     ),
                   ),
                 ),
-                if (widget.originalPrice != null) 
+                if (widget.originalPrice != null)
                   Padding(
                     padding: EdgeInsets.only(left: 15.0, top: 10.0),
                     child: Container(
@@ -106,6 +109,7 @@ class _SlideItemState extends State<SlideItem> {
                 Padding(
                     padding: EdgeInsets.only(left: 15.0),
                     child: RaisedButton(
+                      color: Colors.grey[700],
                       child: Text(
                         "View Deal",
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -126,7 +130,12 @@ class _SlideItemState extends State<SlideItem> {
 
 launchURL(String url) async {
   if (await canLaunch(url)) {
-    await launch(url, forceWebView: true);
+    await launch(
+      url, 
+      forceWebView: true,
+      enableDomStorage: true,
+      enableJavaScript: true
+    );
   } else {
     throw 'Could not launch $url';
   }

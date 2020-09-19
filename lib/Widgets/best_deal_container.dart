@@ -1,10 +1,11 @@
 import 'package:ebay_deals_app/Widgets/slide_item.dart';
+import 'package:ebay_deals_app/view/ViewAllDealsPage.dart';
 import 'package:flutter/material.dart';
 
 class BiggestDealContainer extends StatefulWidget {
   var deals;
   String title;
-  
+
   BiggestDealContainer({Key key, @required this.deals, @required this.title})
       : super(key: key);
 
@@ -20,14 +21,39 @@ class _BiggestDealContainerState extends State<BiggestDealContainer> {
         Padding(
           padding: const EdgeInsets.only(top: 40.0, left: 8.0),
           child: Container(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              widget.title,
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    widget.title,
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  if (widget.deals.length > 4)
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ViewAllDealsPage(widget.deals, "Biggest Savings"))
+                        );
+                      },
+                      child: Text(
+                        "View All",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400),
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                ],
               ),
-              textAlign: TextAlign.left,
             ),
           ),
         ),
@@ -39,7 +65,7 @@ class _BiggestDealContainerState extends State<BiggestDealContainer> {
               primary: false,
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: widget.deals == null ? 0 : widget.deals.length,
+              itemCount: (widget.deals == null) ? 0 : (widget.deals.length > 4) ? 4 : widget.deals.length,
               itemBuilder: (BuildContext context, int index) {
                 var deals = widget.deals[index].toJson();
 
