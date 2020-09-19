@@ -40,7 +40,7 @@ class _BiggestDealContainerState extends State<BiggestDealContainer> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ViewAllDealsPage(widget.deals, "Biggest Savings"))
+                          MaterialPageRoute(builder: (context) => ViewAllDealsPage(widget.deals, widget.title))
                         );
                       },
                       child: Text(
