@@ -1,6 +1,6 @@
 # ebay_deals_app
 
-A multi-platform Flutter App designed to simplify the process of checking daily deals on eBay.
+A multi-platform Flutter App designed to simplify the process of finding daily deals on eBay.
 
 ## About this app
 
